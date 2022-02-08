@@ -1,0 +1,82 @@
+<!-- Copyright 2022 Ryohei Kobayashi
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<RTL_SPEC>
+  <FUNCTION name="fpga_sort" module="fpga_sort">
+    <ATTRIBUTES>
+      <IS_STALL_FREE value="no" />
+      <IS_FIXED_LATENCY value="no" />
+      <EXPECTED_LATENCY value="10" />
+      <CAPACITY value="1" />
+      <HAS_SIDE_EFFECTS value="yes" />
+      <ALLOW_MERGING value="no" />
+      <!-- memory access parameters -->
+      <PARAMETER name="MAXBURST_LOG" value="4" />
+      <PARAMETER name="WRITENUM_SIZE" value="5" />
+      <PARAMETER name="DRAM_ADDRSPACE" value="64" />
+      <PARAMETER name="DRAM_DATAWIDTH" value="512" />
+      <!-- parameters for hybrid sorter's configuration -->
+      <PARAMETER name="W_LOG" value="3" />
+      <PARAMETER name="P_LOG" value="4" />
+      <PARAMETER name="E_LOG" value="3" />
+      <PARAMETER name="M_LOG" value="3" />
+      <PARAMETER name="USE_IPCORE" value="INTEL" />
+      <PARAMETER name="FLOAT" value="no" />
+      <PARAMETER name="SIGNED" value="no" />
+      <PARAMETER name="PAYW" value="32" />
+      <PARAMETER name="KEYW" value="32" />
+      <PARAMETER name="NUMW" value="32" />
+    </ATTRIBUTES>
+    <INTERFACE>
+      <!-- global clock and low-actived reset -->
+      <AVALON port="clock" type="clock" />
+      <AVALON port="resetn" type="resetn" />
+      <!-- mapped to arguments from cl code -->
+      <MEM_INPUT port="cl_dummy" access="readwrite" />
+      <INPUT port="cl_dst_addr" width="64" />
+      <INPUT port="cl_src_addr" width="64" />
+      <INPUT port="cl_numdata" width="32" />
+      <OUTPUT port="cl_ret" width="32" />
+      <!-- Avalon-ST Interface -->
+      <AVALON port="ast_o_ready" type="oready" />
+      <AVALON port="ast_i_valid" type="ivalid" />
+      <AVALON port="ast_o_valid" type="ovalid" />
+      <AVALON port="ast_i_ready" type="iready" />
+      <!-- Avalon-MM Interface for read(src) and write(dst) -->
+      <AVALON_MEM port="src_0" width="512" burstwidth="5" optype="read" buffer_location="" />
+      <AVALON_MEM port="src_1" width="512" burstwidth="5" optype="read" buffer_location="" />
+      <AVALON_MEM port="src_2" width="512" burstwidth="5" optype="read" buffer_location="" />
+      <AVALON_MEM port="src_3" width="512" burstwidth="5" optype="read" buffer_location="" />
+      <AVALON_MEM port="src_4" width="512" burstwidth="5" optype="read" buffer_location="" />
+      <AVALON_MEM port="src_5" width="512" burstwidth="5" optype="read" buffer_location="" />
+      <AVALON_MEM port="src_6" width="512" burstwidth="5" optype="read" buffer_location="" />
+      <AVALON_MEM port="src_7" width="512" burstwidth="5" optype="read" buffer_location="" />
+      <AVALON_MEM port="dst" width="512" burstwidth="5" optype="write" buffer_location="" />
+    </INTERFACE>
+    <C_MODEL>
+      <FILE name="c_model.cl" />
+    </C_MODEL>
+    <REQUIREMENTS>
+      <FILE name="./fpga_sort_rtl/avalon_mmcon.v" />
+      <FILE name="./fpga_sort_rtl/even_odd.v" />
+      <FILE name="./fpga_sort_rtl/fifo.v" />
+      <FILE name="./fpga_sort_rtl/fpga_sort.v" />
+      <FILE name="./fpga_sort_rtl/hms.v" />
+      <FILE name="./fpga_sort_rtl/hybrid_sorter.v" />
+      <FILE name="./fpga_sort_rtl/read_request_con.v" />
+      <FILE name="./fpga_sort_rtl/utils.v" />
+      <FILE name="./fpga_sort_rtl/virtualtree.v" />
+    </REQUIREMENTS>
+  </FUNCTION>
+</RTL_SPEC>

@@ -1,0 +1,165 @@
+<!-- Copyright 2022 Ryohei Kobayashi
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<RTL_SPEC>
+  <!-- <FUNCTION name="clocktime32" module="clocktime"> -->
+  <!--   <ATTRIBUTES> -->
+  <!--     <IS_STALL_FREE value="yes"/> -->
+  <!--     <IS_FIXED_LATENCY value="yes"/> -->
+  <!--     <EXPECTED_LATENCY value="1"/> -->
+  <!--     <CAPACITY value="1"/> -->
+  <!--     <HAS_SIDE_EFFECTS value="no"/> -->
+  <!--     <ALLOW_MERGING value="no"/> -->
+  <!--     <PARAMETER name="IDATA_WIDTH" value="32"/> -->
+  <!--     <PARAMETER name="TIME_WIDTH" value="64"/> -->
+  <!--     <PARAMETER name="ODATA_PADS" value="32"/> -->
+  <!--   </ATTRIBUTES> -->
+  <!--   <INTERFACE> -->
+  <!--     <AVALON port="clock" type="clock"/> -->
+  <!--     <AVALON port="resetn" type="resetn"/> -->
+  <!--     <AVALON port="ivalid" type="ivalid"/> -->
+  <!--     <AVALON port="iready" type="iready"/> -->
+  <!--     <AVALON port="ovalid" type="ovalid"/> -->
+  <!--     <AVALON port="oready" type="oready"/> -->
+  <!--     <INPUT  port="idata" width="32"/> -->
+  <!--     <OUTPUT port="odata" width="128"/> -->
+  <!--   </INTERFACE> -->
+  <!--   <C_MODEL> -->
+  <!--     <FILE name="clocktime_c.cl" /> -->
+  <!--   </C_MODEL> -->
+  <!--   <REQUIREMENTS> -->
+  <!--     <FILE name="clocktime.v" /> -->
+  <!--   </REQUIREMENTS> -->
+  <!-- </FUNCTION> -->
+
+  <FUNCTION name="clocktime64" module="clocktime">
+    <ATTRIBUTES>
+      <IS_STALL_FREE value="yes" />
+      <IS_FIXED_LATENCY value="yes" />
+      <EXPECTED_LATENCY value="1" />
+      <CAPACITY value="1" />
+      <HAS_SIDE_EFFECTS value="no" />
+      <ALLOW_MERGING value="no" />
+      <PARAMETER name="IDATA_WIDTH" value="64" />
+      <PARAMETER name="TIME_WIDTH" value="64" />
+      <PARAMETER name="ODATA_PADS" value="0" />
+    </ATTRIBUTES>
+    <INTERFACE>
+      <AVALON port="clock" type="clock" />
+      <AVALON port="resetn" type="resetn" />
+      <AVALON port="ivalid" type="ivalid" />
+      <AVALON port="iready" type="iready" />
+      <AVALON port="ovalid" type="ovalid" />
+      <AVALON port="oready" type="oready" />
+      <INPUT port="idata" width="64" />
+      <OUTPUT port="odata" width="128" />
+    </INTERFACE>
+    <C_MODEL>
+      <FILE name="clocktime_c.cl" />
+    </C_MODEL>
+    <REQUIREMENTS>
+      <FILE name="clocktime.v" />
+    </REQUIREMENTS>
+  </FUNCTION>
+
+  <!-- <FUNCTION name="clocktime128" module="clocktime"> -->
+  <!--   <ATTRIBUTES> -->
+  <!--     <IS_STALL_FREE value="yes"/> -->
+  <!--     <IS_FIXED_LATENCY value="yes"/> -->
+  <!--     <EXPECTED_LATENCY value="1"/> -->
+  <!--     <CAPACITY value="1"/> -->
+  <!--     <HAS_SIDE_EFFECTS value="no"/> -->
+  <!--     <ALLOW_MERGING value="no"/> -->
+  <!--     <PARAMETER name="IDATA_WIDTH" value="128"/> -->
+  <!--     <PARAMETER name="TIME_WIDTH" value="64"/> -->
+  <!--     <PARAMETER name="ODATA_PADS" value="64"/> -->
+  <!--   </ATTRIBUTES> -->
+  <!--   <INTERFACE> -->
+  <!--     <AVALON port="clock" type="clock"/> -->
+  <!--     <AVALON port="resetn" type="resetn"/> -->
+  <!--     <AVALON port="ivalid" type="ivalid"/> -->
+  <!--     <AVALON port="iready" type="iready"/> -->
+  <!--     <AVALON port="ovalid" type="ovalid"/> -->
+  <!--     <AVALON port="oready" type="oready"/> -->
+  <!--     <INPUT  port="idata" width="128"/> -->
+  <!--     <OUTPUT port="odata" width="256"/> -->
+  <!--   </INTERFACE> -->
+  <!--   <C_MODEL> -->
+  <!--     <FILE name="clocktime_c.cl" /> -->
+  <!--   </C_MODEL> -->
+  <!--   <REQUIREMENTS> -->
+  <!--     <FILE name="clocktime.v" /> -->
+  <!--   </REQUIREMENTS> -->
+  <!-- </FUNCTION> -->
+
+  <!-- <FUNCTION name="clocktime256" module="clocktime"> -->
+  <!--   <ATTRIBUTES> -->
+  <!--     <IS_STALL_FREE value="yes"/> -->
+  <!--     <IS_FIXED_LATENCY value="yes"/> -->
+  <!--     <EXPECTED_LATENCY value="1"/> -->
+  <!--     <CAPACITY value="1"/> -->
+  <!--     <HAS_SIDE_EFFECTS value="no"/> -->
+  <!--     <ALLOW_MERGING value="no"/> -->
+  <!--     <PARAMETER name="IDATA_WIDTH" value="256"/> -->
+  <!--     <PARAMETER name="TIME_WIDTH" value="64"/> -->
+  <!--     <PARAMETER name="ODATA_PADS" value="192"/> -->
+  <!--   </ATTRIBUTES> -->
+  <!--   <INTERFACE> -->
+  <!--     <AVALON port="clock" type="clock"/> -->
+  <!--     <AVALON port="resetn" type="resetn"/> -->
+  <!--     <AVALON port="ivalid" type="ivalid"/> -->
+  <!--     <AVALON port="iready" type="iready"/> -->
+  <!--     <AVALON port="ovalid" type="ovalid"/> -->
+  <!--     <AVALON port="oready" type="oready"/> -->
+  <!--     <INPUT  port="idata" width="256"/> -->
+  <!--     <OUTPUT port="odata" width="512"/> -->
+  <!--   </INTERFACE> -->
+  <!--   <C_MODEL> -->
+  <!--     <FILE name="clocktime_c.cl" /> -->
+  <!--   </C_MODEL> -->
+  <!--   <REQUIREMENTS> -->
+  <!--     <FILE name="clocktime.v" /> -->
+  <!--   </REQUIREMENTS> -->
+  <!-- </FUNCTION> -->
+
+  <!-- <FUNCTION name="clocktime512" module="clocktime"> -->
+  <!--   <ATTRIBUTES> -->
+  <!--     <IS_STALL_FREE value="yes"/> -->
+  <!--     <IS_FIXED_LATENCY value="yes"/> -->
+  <!--     <EXPECTED_LATENCY value="1"/> -->
+  <!--     <CAPACITY value="1"/> -->
+  <!--     <HAS_SIDE_EFFECTS value="no"/> -->
+  <!--     <ALLOW_MERGING value="no"/> -->
+  <!--     <PARAMETER name="IDATA_WIDTH" value="512"/> -->
+  <!--     <PARAMETER name="TIME_WIDTH" value="64"/> -->
+  <!--     <PARAMETER name="ODATA_PADS" value="448"/> -->
+  <!--   </ATTRIBUTES> -->
+  <!--   <INTERFACE> -->
+  <!--     <AVALON port="clock" type="clock"/> -->
+  <!--     <AVALON port="resetn" type="resetn"/> -->
+  <!--     <AVALON port="ivalid" type="ivalid"/> -->
+  <!--     <AVALON port="iready" type="iready"/> -->
+  <!--     <AVALON port="ovalid" type="ovalid"/> -->
+  <!--     <AVALON port="oready" type="oready"/> -->
+  <!--     <INPUT  port="idata" width="512"/> -->
+  <!--     <OUTPUT port="odata" width="1024"/> -->
+  <!--   </INTERFACE> -->
+  <!--   <C_MODEL> -->
+  <!--     <FILE name="clocktime_c.cl" /> -->
+  <!--   </C_MODEL> -->
+  <!--   <REQUIREMENTS> -->
+  <!--     <FILE name="clocktime.v" /> -->
+  <!--   </REQUIREMENTS> -->
+  <!-- </FUNCTION> -->
+</RTL_SPEC>
