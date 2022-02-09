@@ -12,7 +12,7 @@ TBD
 
 ## Grants
 
-Grants-in-Aid for Scientific Research-KAKENHI- "Early-Career Scientists " by Japan Society for the Promotion of Science.
+Grants-in-Aid for Scientific Research-KAKENHI- "Early-Career Scientists" by Japan Society for the Promotion of Science.
 
 URL: <https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-19K20276/>
 
