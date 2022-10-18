@@ -19,5 +19,4 @@ URL: <https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-19K20276/>
 ## Publications
 
 - Ryohei Kobayashi et al., [An Open-source FPGA Library for Data Sorting](https://doi.org/10.2197/ipsjjip.30.766), Journal of Information Processing, 2022
-
 - Ryohei Kobayashi et al., [A Sorting Library for FPGA Implementation in OpenCL Programming](https://doi.org/10.1145/3468044.3468054), HEART '21
